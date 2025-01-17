@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="nbu.CSCB532.addressbook">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- For backwards compatibility -->
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="31"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AddressBook"
+        tools:targetApi="31">
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AddressBook">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Register Activity -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:label="@string/title_activity_register"
+            android:theme="@style/Theme.AddressBook" />
+
+        <!-- Login Activity -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.AddressBook" />
+
+        <!-- Manage Contacts Activity -->
+        <activity
+            android:name=".ManageContactsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_manage_contacts"
+            android:theme="@style/Theme.AddressBook" />
+
+        <!-- Manage Tags Activity -->
+        <activity
+            android:name=".ManageTagsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_manage_tags"
+            android:theme="@style/Theme.AddressBook" />
+
+        <!-- View Profile Activity -->
+        <activity
+            android:name=".ViewProfileActivity"
+            android:exported="false"
+            android:label="@string/title_activity_view_profile"
+            android:theme="@style/Theme.AddressBook" />
+
+        <!-- Import Data Activity -->
+        <activity
+            android:name=".ImportDataActivity"
+            android:exported="false"
+            android:label="@string/title_activity_import_data"
+            android:theme="@style/Theme.AddressBook" />
+
+    </application>
+
+</manifest>

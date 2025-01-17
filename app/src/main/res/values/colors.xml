@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <!-- Background Colors -->
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextSecondary">#757575</color>
+    <color name="colorTextHint">#BDBDBD</color>
+    <color name="colorTextLink">#1E88E5</color>
+
+    <!-- Button Colors -->
+    <color name="buttonBackground">#6200EE</color>
+    <color name="buttonTextColor">#FFFFFF</color>
+    <color name="buttonBackgroundSmall">#03DAC5</color>
+    <color name="buttonTextColorSmall">#000000</color>
+
+    <!-- Status Bar & Navigation Bar Colors -->
+    <color name="statusBarColor">#3700B3</color>
+    <color name="navigationBarColor">#6200EE</color>
+
+    <!-- Dialog Colors -->
+    <color name="dialogBackground">#FFFFFF</color>
+
+    <!-- Input Method Colors -->
+    <color name="colorInputBackground">#F5F5F5</color>
+
+    <!-- Action Bar Colors -->
+    <color name="actionBarBackground">#6200EE</color>
+
+</resources>
