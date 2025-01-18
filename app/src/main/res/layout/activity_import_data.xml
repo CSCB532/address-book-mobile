@@ -5,27 +5,60 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Centered "Import Contacts" Title -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Import Data"
-        android:textSize="24sp"
-        android:textColor="#343a40"
-        android:layout_marginBottom="32dp" />
-
-    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Import Contacts"
-        android:textColor="#ffffff"
-        android:backgroundTint="#007bff"
-        android:padding="12dp" />
+        android:textSize="24sp"
+        android:textColor="#343a40"
+        android:gravity="center"
+        android:layout_marginBottom="32dp" />
 
-    <Button
+    <!-- Text to guide user -->
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Import Tags"
+        android:text="Upload CSV or JSON File:"
+        android:textSize="18sp"
+        android:textColor="#343a40"
+        android:layout_marginBottom="16dp" />
+
+    <!-- File Selection TextView (similar to file input) -->
+    <TextView
+        android:id="@+id/selectFileTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select a file"
+        android:textColor="#007bff"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="12dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <!-- Import Button -->
+    <Button
+        android:id="@+id/importButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Import"
         android:textColor="#ffffff"
         android:backgroundTint="#007bff"
-        android:padding="12dp" />
+        android:padding="12dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Back to Home Button (Grayish color) -->
+    <Button
+        android:id="@+id/backToHomeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to Home"
+        android:textColor="#ffffff"
+        android:backgroundTint="#b0b0b0"
+        android:padding="12dp"
+        android:layout_marginTop="16dp" />
+
 </LinearLayout>
