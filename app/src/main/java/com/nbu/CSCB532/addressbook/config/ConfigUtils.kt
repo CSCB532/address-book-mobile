@@ -1,7 +1,7 @@
 package com.nbu.CSCB532.addressbook.config
 
 import android.content.Context
-import com.nbu.CSCB532.R
+import com.nbu.CSCB532.addressbook.R
 import java.io.IOException
 import java.util.Properties
 

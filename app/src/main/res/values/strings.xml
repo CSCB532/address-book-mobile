@@ -1,3 +1,26 @@
 <resources>
-    <string name="app_name">AddressBook</string>
+    <!-- App Titles -->
+    <string name="app_name">Address Book</string>
+
+    <!-- Register Activity -->
+    <string name="title_activity_register">Create an Account</string>
+
+    <!-- Login Activity -->
+    <string name="title_activity_login">Login</string>
+
+    <!-- Home Activity -->
+    <string name="title_activity_home">Home</string>
+
+    <!-- Manage Contacts Activity -->
+    <string name="title_activity_manage_contacts">Manage Contacts</string>
+
+    <!-- Import Data Activity -->
+    <string name="title_activity_import_data">Import Data</string>
+
+    <!-- Manage Tags Activity -->
+    <string name="title_activity_manage_tags">Manage Tags</string>
+
+    <!-- View Profile Activity -->
+    <string name="title_activity_view_profile">View Profile</string>
+
 </resources>

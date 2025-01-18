@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.nbu.CSCB532"
+    namespace = "com.nbu.CSCB532.addressbook"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.nbu.CSCB532"
+        applicationId = "com.nbu.CSCB532.addressbook"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

@@ -1,5 +1,6 @@
 package com.nbu.CSCB532.addressbook.api
 
+import com.google.gson.annotations.SerializedName
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -15,8 +16,8 @@ interface ApiService {
 }
 
 data class LoginRequest(
-    val email: String,
-    val password: String
+    @SerializedName("email") val email: String,
+    @SerializedName("password") val password: String
 )
 
 data class LoginResponse(

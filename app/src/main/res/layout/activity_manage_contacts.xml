@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manage Contacts"
+        android:textSize="24sp"
+        android:textColor="#343a40"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add New Contact"
+        android:textColor="#ffffff"
+        android:backgroundTint="#007bff"
+        android:padding="12dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Contacts"
+        android:textColor="#ffffff"
+        android:backgroundTint="#007bff"
+        android:padding="12dp" />
+</LinearLayout>

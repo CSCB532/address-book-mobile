@@ -7,7 +7,6 @@
     <color name="colorAccent">#03DAC5</color>
 
     <!-- Background Colors -->
-    <color name="colorBackground">#FFFFFF</color>
     <color name="windowBackground">#FFFFFF</color>
 
     <!-- Text Colors -->
@@ -18,7 +17,6 @@
 
     <!-- Button Colors -->
     <color name="buttonBackground">#6200EE</color>
-    <color name="buttonTextColor">#FFFFFF</color>
     <color name="buttonBackgroundSmall">#03DAC5</color>
     <color name="buttonTextColorSmall">#000000</color>
 
@@ -34,5 +32,11 @@
 
     <!-- Action Bar Colors -->
     <color name="actionBarBackground">#6200EE</color>
+    
+    <!-- Primary Colors -->
+    <color name="buttonTextColor">#FFFFFF</color>
+    <color name="buttonBlue">#4A90E2</color>
 
+    <!-- Background Colors -->
+    <color name="colorBackground">#F8F9FA</color>
 </resources>

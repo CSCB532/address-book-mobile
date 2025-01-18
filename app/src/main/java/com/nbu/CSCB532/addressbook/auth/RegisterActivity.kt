@@ -6,10 +6,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.nbu.CSCB532.R
+import com.nbu.CSCB532.addressbook.R
 import com.nbu.CSCB532.addressbook.api.RegisterRequest
 import com.nbu.CSCB532.addressbook.api.RegisterResponse
-import com.nbu.CSCB532.addressbook.auth.client.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

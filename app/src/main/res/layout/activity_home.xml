@@ -6,20 +6,67 @@
     android:gravity="center"
     android:padding="16dp">
 
+    <!-- Welcome message with dynamic user name -->
     <TextView
+        android:id="@+id/welcomeMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to the Address Book!"
+        android:text="Welcome, #{Name}!"
         android:textSize="24sp"
         android:textColor="#343a40"
         android:layout_marginBottom="32dp" />
 
+    <!-- Manage Contacts Button -->
     <Button
-        android:id="@+id/logout_button"
-        android:layout_width="wrap_content"
+        android:id="@+id/manageContactsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage Contacts"
+        android:textColor="#ffffff"
+        android:backgroundTint="#007bff"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Import Data Button -->
+    <Button
+        android:id="@+id/importDataButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Import Data"
+        android:textColor="#ffffff"
+        android:backgroundTint="#007bff"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Manage Tags Button -->
+    <Button
+        android:id="@+id/manageTagsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage Tags"
+        android:textColor="#ffffff"
+        android:backgroundTint="#007bff"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- View Profile Button -->
+    <Button
+        android:id="@+id/viewProfileButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Profile"
+        android:textColor="#ffffff"
+        android:backgroundTint="#007bff"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Logout Button with grayish color -->
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Log Out"
         android:textColor="#ffffff"
-        android:backgroundTint="#007bff"
+        android:backgroundTint="#6c757d"
         android:padding="12dp" />
 </LinearLayout>
