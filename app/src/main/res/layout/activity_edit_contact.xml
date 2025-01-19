@@ -3,47 +3,159 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:scrollbars="vertical">
 
-    <!-- Contact Name Input -->
+    <!-- Contact Name -->
+    <TextView
+        android:id="@+id/editContactNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"/>
+
     <EditText
         android:id="@+id/editContactName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Name"
-        android:textSize="16sp"
-        android:padding="10dp"
-        android:layout_marginBottom="16dp"/>
+        android:hint="Enter full name"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="16dp" />
 
-    <!-- Contact Phone Input -->
+    <!-- Contact Phone -->
+    <TextView
+        android:id="@+id/editContactPhoneLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"/>
+
     <EditText
         android:id="@+id/editContactPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Phone"
-        android:textSize="16sp"
-        android:padding="10dp"
-        android:layout_marginBottom="16dp"/>
+        android:hint="Enter phone number"
+        android:inputType="phone"
+        android:layout_marginBottom="16dp" />
 
-    <!-- Contact Email Input -->
+    <!-- Contact Email -->
+    <TextView
+        android:id="@+id/editContactEmailLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"/>
+
     <EditText
         android:id="@+id/editContactEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Email"
-        android:textSize="16sp"
-        android:padding="10dp"
-        android:layout_marginBottom="16dp"/>
+        android:hint="Enter email address"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="16dp" />
 
-    <!-- Contact Tags Input (Optional) -->
+    <!-- Contact Address -->
+    <TextView
+        android:id="@+id/editContactAddressLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"/>
+
     <EditText
+        android:id="@+id/editContactAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter address"
+        android:inputType="text"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Contact Company -->
+    <TextView
+        android:id="@+id/editContactCompanyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Company"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/editContactCompany"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter company name"
+        android:inputType="text"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Contact Mobile -->
+    <TextView
+        android:id="@+id/editContactMobileLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/editContactMobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter mobile number"
+        android:inputType="phone"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Contact Fax -->
+    <TextView
+        android:id="@+id/editContactFaxLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fax"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/editContactFax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter fax number"
+        android:inputType="phone"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Contact Comment -->
+    <TextView
+        android:id="@+id/editContactCommentLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comment"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/editContactComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter any comment"
+        android:inputType="textMultiLine"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Contact Tags -->
+    <TextView
+        android:id="@+id/editContactTagsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tags"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"/>
+
+    <Spinner
         android:id="@+id/editContactTags"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Tags (Optional)"
-        android:textSize="16sp"
-        android:padding="10dp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp" />
 
     <!-- Save Button -->
     <Button
@@ -51,5 +163,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimary"/>
+
 </LinearLayout>

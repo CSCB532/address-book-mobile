@@ -52,12 +52,16 @@ interface ApiService {
 
     // Edit a specific contact by ID
     @PUT("contacts/{contact_id}")
-    fun updateContact(@Path("contact_id") contactId: Int, @Body contact: Contact): Call<Contact>
+    fun updateContact(@Path("contact_id") contactId: Int, @Body contact: Contact): Call<ApiResponse>
 
     // Delete a specific contact by ID
     @DELETE("contacts/{contact_id}")
     fun deleteContact(@Path("contact_id") contactId: Int): Call<ResponseBody>
 }
+data class ApiResponse(
+    val success: Boolean,
+    val message: String
+)
 
 data class Contact(
     val id: Int,

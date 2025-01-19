@@ -132,16 +132,19 @@ class ManageContactsActivity : AppCompatActivity() {
             // View, Edit, and Delete buttons
             val viewButton = Button(this).apply {
                 text = "View"
+                layoutParams = TableRow.LayoutParams(0, TableRow.LayoutParams.WRAP_CONTENT, 1f)  // Set equal width
                 setOnClickListener { viewContact(contact) }
             }
 
             val editButton = Button(this).apply {
                 text = "Edit"
+                layoutParams = TableRow.LayoutParams(0, TableRow.LayoutParams.WRAP_CONTENT, 1f)  // Set equal width
                 setOnClickListener { editContact(contact) }
             }
 
             val deleteButton = Button(this).apply {
                 text = "Delete"
+                layoutParams = TableRow.LayoutParams(0, TableRow.LayoutParams.WRAP_CONTENT, 1f)  // Set equal width
                 setBackgroundColor(android.graphics.Color.RED)
                 setOnClickListener { deleteContact(contact.id) }
             }
@@ -178,8 +181,17 @@ class ManageContactsActivity : AppCompatActivity() {
 
     // Handle Edit button click
     private fun editContact(contact: Contact) {
-        val intent = Intent(this, EditContactActivity::class.java).apply {
+        val intent = Intent(this, ViewContactActivity::class.java).apply {
             putExtra("CONTACT_ID", contact.id)
+            putExtra("first_name", contact.first_name)
+            putExtra("last_name", contact.last_name)
+            putExtra("company_name", contact.company_name)
+            putExtra("phone", contact.phone)
+            putExtra("mobile", contact.mobile)
+            putExtra("email", contact.email)
+            putExtra("fax", contact.fax)
+            putExtra("address", contact.address)
+            putExtra("comment", contact.comment)
         }
         startActivity(intent)
     }
