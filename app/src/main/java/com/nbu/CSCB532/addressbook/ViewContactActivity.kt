@@ -1,61 +1,75 @@
 package com.nbu.CSCB532.addressbook
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.nbu.CSCB532.addressbook.api.Contact
-import com.nbu.CSCB532.addressbook.api.client.RetrofitClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class ViewContactActivity : AppCompatActivity() {
 
     private lateinit var contactNameTextView: TextView
+    private lateinit var contactCompanyTextView: TextView
+    private lateinit var contactAddressTextView: TextView
     private lateinit var contactPhoneTextView: TextView
     private lateinit var contactEmailTextView: TextView
-    private lateinit var contactAddressTextView: TextView
+    private lateinit var contactFaxTextView: TextView
+    private lateinit var contactMobileTextView: TextView
+    private lateinit var contactCommentTextView: TextView
+    private lateinit var editButton: Button
+    private lateinit var backToContactsButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_contact)
-/*
 
-        contactNameTextView = findViewById(R.id.contactNameTextView)
-        contactPhoneTextView = findViewById(R.id.contactPhoneTextView)
-        contactEmailTextView = findViewById(R.id.contactEmailTextView)
-        contactAddressTextView = findViewById(R.id.contactAddressTextView)
-*/
+        // Initialize views
+        contactNameTextView = findViewById(R.id.contactName)
+        contactCompanyTextView = findViewById(R.id.contactCompany)
+        contactAddressTextView = findViewById(R.id.contactAddress)
+        contactPhoneTextView = findViewById(R.id.contactPhone)
+        contactEmailTextView = findViewById(R.id.contactEmail)
+        contactFaxTextView = findViewById(R.id.contactFax)
+        contactMobileTextView = findViewById(R.id.contactMobile)
+        contactCommentTextView = findViewById(R.id.contactComment)
+        editButton = findViewById(R.id.editButton)
+        backToContactsButton = findViewById(R.id.backToContactsButton)
 
+        // Get the contactId from intent
         val contactId = intent.getIntExtra("CONTACT_ID", -1)
 
-        if (contactId != -1) {
-            fetchContact(contactId)
+        val first_name = intent.getStringExtra("first_name")
+        val last_name = intent.getStringExtra("last_name")
+        val company_name = intent.getStringExtra("company_name")
+        val phone = intent.getIntExtra("phone", -1)
+        val mobile = intent.getIntExtra("mobile", -1)
+        val email = intent.getStringExtra("email")
+        val fax = intent.getStringExtra("fax")
+        val address = intent.getStringExtra("address")
+        val comment = intent.getStringExtra("comment")
+        contactNameTextView.text = "Name: ${first_name} ${last_name}"
+        contactCompanyTextView.text = "Company: ${company_name ?: "N/A"}"
+        contactAddressTextView.text = "Address: ${address ?: "N/A"}"
+        contactPhoneTextView.text = "Phone: ${phone}"
+        contactEmailTextView.text = "Email: ${email}"
+        contactFaxTextView.text = "Fax: ${fax ?: "N/A"}"
+        contactMobileTextView.text = "Mobile: ${mobile ?: "N/A"}"
+        contactCommentTextView.text = "Comment: ${comment ?: "N/A"}"
+
+        // Edit button click listener
+        editButton.setOnClickListener {
+            val editIntent = Intent(this, EditContactActivity::class.java)
+            editIntent.putExtra(
+                "CONTACT_ID",
+                contactId
+            ) // Pass the contactId to the EditContactActivity
+            startActivity(editIntent)
         }
-    }
 
-    private fun fetchContact(contactId: Int) {
-        RetrofitClient.getInstance(this).getContact(contactId).enqueue(object : Callback<Contact> {
-            override fun onResponse(call: Call<Contact>, response: Response<Contact>) {
-                if (response.isSuccessful && response.body() != null) {
-                    val contact = response.body()!!
-                    displayContact(contact)
-                } else {
-                    Toast.makeText(this@ViewContactActivity, "Failed to fetch contact details", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            override fun onFailure(call: Call<Contact>, t: Throwable) {
-                Toast.makeText(this@ViewContactActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
-            }
-        })
-    }
-
-    private fun displayContact(contact: Contact) {
-        contactNameTextView.text = contact.first_name + " " + contact.last_name
-        contactPhoneTextView.text = contact.phone
-        contactEmailTextView.text = contact.email
-        //contactAddressTextView.text = contact.address
+        backToContactsButton.setOnClickListener {
+            val intent = Intent(this, ManageContactsActivity::class.java)
+            startActivity(intent)
+            finish() // Optional: Finish the current activity to remove it from the back stack
+        }
     }
 }

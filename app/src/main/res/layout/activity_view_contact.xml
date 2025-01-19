@@ -5,13 +5,38 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Contact Details Title -->
+    <TextView
+        android:id="@+id/contactDetailsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact Details"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingBottom="16dp"/>
+
     <!-- Contact Name -->
     <TextView
         android:id="@+id/contactName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name: John Doe"
         android:textSize="18sp"
+        android:paddingBottom="8dp"/>
+
+    <!-- Contact Company -->
+    <TextView
+        android:id="@+id/contactCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:paddingBottom="8dp"/>
+
+    <!-- Contact Address -->
+    <TextView
+        android:id="@+id/contactAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
         android:paddingBottom="8dp"/>
 
     <!-- Contact Phone -->
@@ -19,7 +44,6 @@
         android:id="@+id/contactPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Phone: +1 234 567 890"
         android:textSize="16sp"
         android:paddingBottom="8dp"/>
 
@@ -28,11 +52,34 @@
         android:id="@+id/contactEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email: johndoe@example.com"
         android:textSize="16sp"
         android:paddingBottom="8dp"/>
 
-    <!-- Buttons for Edit and Delete -->
+    <!-- Contact Fax -->
+    <TextView
+        android:id="@+id/contactFax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:paddingBottom="8dp"/>
+
+    <!-- Contact Mobile -->
+    <TextView
+        android:id="@+id/contactMobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:paddingBottom="8dp"/>
+
+    <!-- Contact Comment -->
+    <TextView
+        android:id="@+id/contactComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:paddingBottom="8dp"/>
+
+    <!-- Buttons for Edit and Back to Home -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,19 +87,23 @@
         android:gravity="center"
         android:layout_marginTop="16dp">
 
+        <!-- Edit Contact Button -->
         <Button
             android:id="@+id/editButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit"
+            android:text="Edit Contact"
             android:layout_marginEnd="16dp"/>
 
         <Button
-            android:id="@+id/deleteButton"
+            android:id="@+id/backToContactsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Delete"
-            android:backgroundTint="@android:color/holo_red_dark"/>
+            android:text="Back to Contacts"
+            android:textColor="#ffffff"
+            android:backgroundTint="#b0b0b0"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center" />
 
     </LinearLayout>
 </LinearLayout>
