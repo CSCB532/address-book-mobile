@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Contact Name Input -->
+    <EditText
+        android:id="@+id/editContactName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Contact Phone Input -->
+    <EditText
+        android:id="@+id/editContactPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Phone"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Contact Email Input -->
+    <EditText
+        android:id="@+id/editContactEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Email"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Contact Tags Input (Optional) -->
+    <EditText
+        android:id="@+id/editContactTags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Tags (Optional)"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

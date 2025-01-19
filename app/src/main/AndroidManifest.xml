@@ -57,6 +57,18 @@
             android:exported="false"
             android:label="@string/title_activity_manage_contacts"
             android:theme="@style/Theme.AddressBook" />
+        <activity
+            android:name=".ViewContactActivity"
+            android:exported="false"
+            android:label="@string/title_activity_view_contact"
+            android:theme="@style/Theme.AddressBook" />
+
+        <activity
+            android:name=".EditContactActivity"
+            android:exported="false"
+            android:label="@string/title_activity_edit_contact"
+            android:theme="@style/Theme.AddressBook" />
+
 
         <!-- Manage Tags Activity -->
         <activity

@@ -23,4 +23,8 @@
     <!-- View Profile Activity -->
     <string name="title_activity_view_profile">View Profile</string>
 
+    <string name="title_activity_view_contact">View Contact</string>
+
+    <string name="title_activity_edit_contact">Edit Contact</string>
+
 </resources>

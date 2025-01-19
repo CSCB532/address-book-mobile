@@ -6,8 +6,8 @@ import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
-import retrofit2.http.POST
 import retrofit2.http.PUT
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface ApiService {
@@ -41,7 +41,43 @@ interface ApiService {
 
     @DELETE("tags/{tag_id}")
     fun deleteTag(@Path("tag_id") tagId: Int): Call<ResponseBody>
+
+    // Get contacts for the current user
+    @GET("contacts")
+    fun getContacts(): Call<ContactResponse>
+
+    // View a specific contact by ID
+    @GET("contacts/{contact_id}")
+    fun getContact(@Path("contact_id") contactId: Int): Call<Contact>
+
+    // Edit a specific contact by ID
+    @PUT("contacts/{contact_id}")
+    fun updateContact(@Path("contact_id") contactId: Int, @Body contact: Contact): Call<Contact>
+
+    // Delete a specific contact by ID
+    @DELETE("contacts/{contact_id}")
+    fun deleteContact(@Path("contact_id") contactId: Int): Call<ResponseBody>
 }
+
+data class Contact(
+    val id: Int,
+    val first_name: String,
+    val last_name: String,
+    val company_name: String,
+    val phone: String,
+    val mobile: String?,
+    val email: String,
+    val fax: String?,
+    val address: String,
+    val comment: String?,
+    val custom_fields: Map<String, Any>, // If the custom fields are dynamic
+    val tags: List<Tag> // List of Tag objects
+)
+
+data class ContactResponse(
+    val success: Boolean,
+    val contacts: List<Contact>
+)
 
 // Request model for adding a new tag
 data class TagRequest(
