@@ -1,39 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="View Profile"
-        android:textSize="24sp"
-        android:textColor="#343a40"
-        android:layout_marginBottom="32dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name: John Doe"
-        android:textSize="18sp"
-        android:textColor="#343a40"
-        android:layout_marginBottom="16dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email: john.doe@example.com"
-        android:textSize="18sp"
-        android:textColor="#343a40"
-        android:layout_marginBottom="16dp" />
-
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit Profile"
-        android:textColor="#ffffff"
-        android:backgroundTint="#007bff"
-        android:padding="12dp" />
-</LinearLayout>
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Centered Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#343a40"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Username Field -->
+        <EditText
+            android:id="@+id/editUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:backgroundTint="#cccccc"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Email Field -->
+        <EditText
+            android:id="@+id/editEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:backgroundTint="#cccccc"
+            android:layout_marginBottom="16dp" />
+
+        <!-- New Password Field -->
+        <EditText
+            android:id="@+id/editPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="New Password"
+            android:inputType="textPassword"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:backgroundTint="#cccccc"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Save Changes Button -->
+        <Button
+            android:id="@+id/saveChangesButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Changes"
+            android:textColor="#ffffff"
+            android:backgroundTint="#007bff"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Delete Account Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete your account"
+            android:textSize="18sp"
+            android:textColor="#dc3545"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/deleteAccountButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete Account"
+            android:textColor="#ffffff"
+            android:backgroundTint="#dc3545"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Return Home Button -->
+        <Button
+            android:id="@+id/returnHomeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Return Home"
+            android:textColor="#ffffff"
+            android:backgroundTint="#6c757d"
+            android:padding="12dp" />
+    </LinearLayout>
+</ScrollView>

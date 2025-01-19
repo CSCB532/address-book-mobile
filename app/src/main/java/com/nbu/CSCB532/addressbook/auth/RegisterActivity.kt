@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.nbu.CSCB532.addressbook.R
 import com.nbu.CSCB532.addressbook.api.RegisterRequest
 import com.nbu.CSCB532.addressbook.api.RegisterResponse
+import com.nbu.CSCB532.addressbook.api.client.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

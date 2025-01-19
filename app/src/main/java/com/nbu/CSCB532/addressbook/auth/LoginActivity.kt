@@ -3,7 +3,6 @@ package com.nbu.CSCB532.addressbook.auth
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
@@ -14,6 +13,8 @@ import com.nbu.CSCB532.addressbook.HomeActivity
 import com.nbu.CSCB532.addressbook.R
 import com.nbu.CSCB532.addressbook.api.LoginRequest
 import com.nbu.CSCB532.addressbook.api.LoginResponse
+import com.nbu.CSCB532.addressbook.api.User
+import com.nbu.CSCB532.addressbook.api.client.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -64,6 +65,7 @@ class LoginActivity : AppCompatActivity() {
     private fun loginUser(email: String, password: String) {
         val loginRequest = LoginRequest(email, password)
 
+        // Make the login API call using Retrofit
         RetrofitClient.getInstance(this).login(loginRequest)
             .enqueue(object : Callback<LoginResponse> {
                 override fun onResponse(
@@ -74,19 +76,30 @@ class LoginActivity : AppCompatActivity() {
                     val responseBody = response.body()?.toString() ?: response.errorBody()?.string()
                     Log.d("LoginActivity", "Response: $responseBody")
 
-                    /*if (response.isSuccessful && response.body() != null) {
+                    // Check if the response was successful
+                    if (response.isSuccessful && response.body() != null) {
                         val loginResponse = response.body()!!
-                        if (loginResponse.success) {*/
-                            saveLoginState(true)
+
+                        // Store session cookie if login is successful
+                        if (loginResponse.success) {
+                            // Get the cookies (session ID) from response headers
+                            val sessionCookie = response.headers()["Set-Cookie"]
+                            if (sessionCookie != null) {
+                                // Store the session cookie
+                                saveSessionCookie(sessionCookie)
+                            }
+
+                            // Save login state and user details
+                            saveLoginState(true, loginResponse.user)
                             navigateToHome()
-                       /* } else {
-                            showToast("Invalid username or password!")
+                        } else {
+                            showToast(loginResponse.message)
                         }
                     } else {
                         // Handle non-JSON response (plain text, HTML, etc.)
                         var errorMessage = response.message() ?: "Unknown error"
                         showToast("Error: $errorMessage")
-                    }*/
+                    }
                 }
 
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
@@ -94,13 +107,21 @@ class LoginActivity : AppCompatActivity() {
                     showToast("Network error: ${t.message}")
                 }
             })
-
     }
 
-    private fun saveLoginState(isLoggedIn: Boolean) {
+    private fun saveSessionCookie(cookie: String) {
+        // Store the session cookie in SharedPreferences
+        val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("session_cookie", cookie)
+        editor.apply()
+    }
+
+    private fun saveLoginState(isLoggedIn: Boolean, user: User) {
         val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putBoolean("isLoggedIn", isLoggedIn)
+        editor.putString("username", user.username)
         editor.apply()
     }
 

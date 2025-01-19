@@ -11,21 +11,73 @@
         android:text="Manage Tags"
         android:textSize="24sp"
         android:textColor="#343a40"
-        android:layout_marginBottom="32dp" />
+        android:layout_marginBottom="32dp"
+        android:gravity="center"/>
 
-    <Button
+    <EditText
+        android:id="@+id/tagNameInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add New Tag"
-        android:textColor="#ffffff"
-        android:backgroundTint="#007bff"
-        android:padding="12dp" />
+        android:hint="Tag Name"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
 
-    <Button
+    <!-- Spinner for color selection -->
+    <Spinner
+        android:id="@+id/colorSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Tags"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Label for Parent Tag -->
+    <TextView
+        android:id="@+id/parentTagLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Parent Tag"
+        android:textSize="16sp"
+        android:textColor="#343a40"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Spinner for selecting parent tag -->
+    <Spinner
+        android:id="@+id/parentTagSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Select Parent Tag"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:padding="8dp"/>
+
+    <Button
+        android:id="@+id/addTagButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Tag"
         android:textColor="#ffffff"
         android:backgroundTint="#007bff"
-        android:padding="12dp" />
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go Home"
+        android:textColor="#ffffff"
+        android:backgroundTint="#808080"
+        android:padding="12dp"/>
+
+    <!-- TableLayout for displaying tags -->
+    <TableLayout
+        android:id="@+id/tagsTable"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:stretchColumns="0"
+        android:paddingTop="16dp"
+        android:visibility="gone">
+        <!-- Rows will be dynamically added here -->
+    </TableLayout>
 </LinearLayout>

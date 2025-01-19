@@ -3,6 +3,7 @@ package com.nbu.CSCB532.addressbook
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.nbu.CSCB532.addressbook.auth.LoginActivity
 
@@ -25,6 +26,13 @@ class HomeActivity : AppCompatActivity() {
 
         // Set content view if the user is logged in
         setContentView(R.layout.activity_home)
+
+        // Get the username from shared preferences
+        val username = sharedPreferences.getString("username", "User")
+
+        // Update the welcome message with the username
+        val welcomeMessage = findViewById<TextView>(R.id.welcomeMessage)
+        welcomeMessage.text = "Welcome, $username!"
 
         // Set up button click listeners
         findViewById<Button>(R.id.manageContactsButton).setOnClickListener {
@@ -53,7 +61,7 @@ class HomeActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putBoolean("isLoggedIn", false)
-        editor.putString("userName", "")
+        editor.putString("username", "")
         editor.apply()
 
         // Navigate to LoginActivity
